@@ -7,7 +7,7 @@ then
 	filesdir="$1"
 	searchstr="$2"
 	matchfile=$(find "$filesdir" -type f -not -path '*/\.git/*'| wc -l);
-	matchlines=$(find "$filesdir" -type f -not -path '*/\.git/*' -exec grep 'Mohsen' {} +| wc -l);
+	matchlines=$(find "$filesdir" -type f -not -path '*/\.git/*' -exec grep "" {$searchstr} +| wc -l);
 	
 	
 	echo " The number of files are $matchfile and the number of matching lines are $matchlines "
