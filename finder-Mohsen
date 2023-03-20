@@ -1,0 +1,21 @@
+#!/bin/sh
+if [ "$#" -eq 2 ]
+then
+    if [ -d "$1" ]
+    then
+#    	echo "$1 Is a Directory"
+	filesdir="$1"
+	searchstr="$2"
+	filenumber=$(find "$filesdir" -type f -not -path '*/\.git/*'| wc -l);
+	matchfilenumber=$(find "$filesdir" -type f -name "*$2*"| wc -l);
+	
+	echo " The number of files are $filenumber and the number of matching lines are $matchfilenumber "
+#	echo "$filesdir Is a Directory"
+    else
+    	echo "It's not a directory ....."
+    	exit 1
+   	fi 
+else
+    echo "Please insert input argument currectly"
+    exit 1
+fi
