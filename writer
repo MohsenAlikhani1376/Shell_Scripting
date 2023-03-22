@@ -12,7 +12,7 @@ then
       echo "$searchstr" >> $FileName
       echo "Changes Applied Successfully !!!! \n"
     else
-        mkdir $FileDir
+        mkdir -p $FileDir
         if [ "$?" -ne 0 ] # -ne : Not Equal  +++++  $? : returned value of last excuted command ( if not 0 , there is a problem)
         then
           echo "$? \n\n"
